@@ -1,0 +1,16 @@
+#include<stdio.h>
+int main()
+{
+    int n,m,i,t;
+    scanf("%d", &t);
+    for(i=0;i<t;i++){
+        scanf("%d %d", &n,&m);
+        if(n<m)
+            printf("%c\n", '<');
+        else if(n>m)
+            printf("%c\n", '>');
+        else if(n==m)
+            printf("%c\n", '=');
+    }
+    return 0;
+}
