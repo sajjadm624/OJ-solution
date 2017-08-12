@@ -1,19 +1,29 @@
 #include<stdio.h>
 int main()
 {
-    long long int n;
-    int s=0;
-    while(scanf("%lld", &n)==1 && n!=0){
-            while(n / 10 != 0){
-            s=0;
-        while(n != 0)
-            {
-        s = s + n % 10;
-        n = n / 10;
+      long long int n;
+    while(scanf("%lld", &n)==1)
+    {
+        if(n==0)
+            break;
+
+          int s=0;
+       while (1)
+    {
+        while( n!=0 )
+        {
+             s = s + (n%10);
+             n = n/10;
         }
-        n=s;
+        if( s/10==0 )
+            break;
+        else
+            {
+                n = s;
+                s = 0;
+            }
     }
-    printf("%lld\n", n);
+    printf("%d\n", s);
     }
     return 0;
 }
