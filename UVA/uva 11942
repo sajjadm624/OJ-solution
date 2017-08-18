@@ -1,0 +1,43 @@
+#include<stdio.h>
+int main()
+{
+    int num[10], i, f1, f2, tc;
+    scanf("%d", &tc);
+    printf("Lumberjacks:\n");
+
+    while( tc-- )
+    {
+        f1=0, f2=0;
+        for( i=0 ; i<10 ; i++ )
+        {
+            scanf("%d", &num[i]);
+        }
+
+        if( num[0] <= num[1] )
+        {
+            for( i=1 ; i<9 ; i++ )
+            {
+                if ( num[i] < num[i+1] )
+                    f1++;
+                else
+                     break;
+            }
+        }
+
+        else if( num[0] >= num[1] )
+        {
+            for( i=1 ; i<9 ; i++ )
+            {
+                if ( num[i] > num[i+1] )
+                    f2++;
+                else
+                     break;
+            }
+        }
+
+        if( f1==8 || f2==8 )
+            printf("Ordered\n");
+        else
+            printf("Unordered\n");
+    }
+}
