@@ -1,0 +1,61 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+    vector <int> v;
+    int test,i,y,z,element,ctc=1,n,q;
+    char command;
+    int d;
+    scanf("%d", &test);
+     while(test--)
+     {
+         scanf("%d %d", &n , &q);
+         v.clear();
+         for(i=0 ; i<n ; i++)
+         {
+             scanf("%d", &element);
+             v.push_back(element);
+         }
+
+         while(q--)
+         {
+             command=getchar();
+             command=getchar();
+             if(command=='S')
+             {
+                scanf("%d",&d);
+                for(i=0; i<n; i++)
+                    v[i] +=d;
+             }
+
+            else if(command=='M')
+            {
+                 scanf("%d",&d);
+                for(i=0; i<n; i++)v[i] *=d;
+            }
+
+            else if(command=='D')
+            {
+                scanf("%d",&d);
+                for(i=0; i<n; i++)v[i] /=d;
+            }
+
+            else if(command=='R')
+            {
+              reverse(v.begin(),v.end());
+            }
+
+            else if(command=='P')
+            {
+               scanf("%d %d",&y, &z);
+                swap(v[y],v[z]);
+            }
+          }
+          printf("Case %d:\n", ctc++);
+              for(i=0; i<n; i++)
+            printf("%d%c", v[i],i==n-1?'\n':' ');
+       }
+      return 0;
+}
